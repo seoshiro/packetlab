@@ -1,0 +1,20 @@
+[
+  {
+    "repo": "packetlab",
+    "name": "closed-import-race",
+    "status": "PASS",
+    "expected": "{\n  \"schemaVersion\": 1,\n  \"config\": {\n    \"seed\": 2026,\n    \"messageCount\": 16,\n    \"sendIntervalMs\": 80,\n    \"delayMs\": 220,\n    \"jitterMs\": 90,\n    \"loss\": 0.3,\n    \"duplicate\": 0.12,\n    \"ack\": false,\n    \"retry\": false,\n    \"dedup\": false,\n    \"backoff\": false,\n    \"retryJitter\": false,\n    \"timeoutMs\": 500,\n    \"maxAttempts\": 6,\n    \"queueCapacity\": 6,\n    \"serviceMs\": 35\n  }\n}",
+    "actual": "{\n  \"schemaVersion\": 1,\n  \"config\": {\n    \"seed\": 2026,\n    \"messageCount\": 16,\n    \"sendIntervalMs\": 80,\n    \"delayMs\": 220,\n    \"jitterMs\": 90,\n    \"loss\": 0.3,\n    \"duplicate\": 0.12,\n    \"ack\": false,\n    \"retry\": false,\n    \"dedup\": false,\n    \"backoff\": false,\n    \"retryJitter\": false,\n    \"timeoutMs\": 500,\n    \"maxAttempts\": 6,\n    \"queueCapacity\": 6,\n    \"serviceMs\": 35\n  }\n}",
+    "disabledAfterRead": false,
+    "steps": [
+      "open import",
+      "select controlled deferred File.text slow-a.json",
+      "Escape",
+      "reopen import",
+      "observe current exported configuration",
+      "complete older File.text",
+      "read textarea"
+    ],
+    "screenshot": "packetlab-closed-import-race-PASS.png"
+  }
+]

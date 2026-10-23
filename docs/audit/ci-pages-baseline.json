@@ -1,0 +1,40 @@
+{
+  "checkedDateUTC": "2026-10-23",
+  "method": "Read-only gh api over allowed network using existing authorization; no credential change",
+  "repositories": [
+    {
+      "repository": "seoshiro/juryflow",
+      "commit": "4d85745484ce96c35d523ae6f08b81b7f26c6205",
+      "workflowRun": "https://github.com/seoshiro/juryflow/actions/runs/40002495552",
+      "runStatus": "completed",
+      "conclusion": "success",
+      "deploymentId": 7285686007,
+      "deploymentStatus": "success",
+      "deployedAt": "2026-10-23T18:23:20Z",
+      "environmentURL": "https://seoshiro.github.io/juryflow/"
+    },
+    {
+      "repository": "seoshiro/tracekit",
+      "commit": "801154dac7eb2d8774d5e8e066f56d0e832d3198",
+      "workflowRun": "https://github.com/seoshiro/tracekit/actions/runs/40009046629",
+      "runStatus": "completed",
+      "conclusion": "success",
+      "deploymentId": 7286719209,
+      "deploymentStatus": "success",
+      "deployedAt": "2026-10-23T19:16:40Z",
+      "environmentURL": "https://seoshiro.github.io/tracekit/"
+    },
+    {
+      "repository": "seoshiro/packetlab",
+      "commit": "b8c0d2c3129d67e7d9274b06a597fa07a4a73661",
+      "workflowRun": "https://github.com/seoshiro/packetlab/actions/runs/40010298960",
+      "runStatus": "completed",
+      "conclusion": "success",
+      "deploymentId": 7286789428,
+      "deploymentStatus": "success",
+      "deployedAt": "2026-10-23T19:19:28Z",
+      "environmentURL": "https://seoshiro.github.io/packetlab/"
+    }
+  ],
+  "pendingLatestRuns": false
+}

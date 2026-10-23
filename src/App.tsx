@@ -198,6 +198,7 @@ export default function App() {
   const [replayText, setReplayText] = useState("");
   const [replayError, setReplayError] = useState("");
   const [readingFile, setReadingFile] = useState(false);
+  const fileSequence = useRef(0);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const config = snapshot.config;
@@ -306,6 +307,7 @@ export default function App() {
   }
 
   function openReplay() {
+    invalidateFile();
     setReplayText(exportReplay(config));
     setReplayError("");
     setRunning(false);
@@ -313,11 +315,12 @@ export default function App() {
   }
 
   function loadReplay() {
+    if (readingFile) return;
     try {
       const next = importReplay(replayText);
       setScenarioId("custom");
       reset(next, t.imported);
-      setReplayOpen(false);
+      closeReplay();
     } catch (caught) {
       setReplayError(
         `${t.invalid} ${caught instanceof Error ? caught.message : String(caught)}`,
@@ -325,23 +328,37 @@ export default function App() {
     }
   }
 
+  function invalidateFile() {
+    fileSequence.current++;
+    setReadingFile(false);
+  }
+
+  function closeReplay() {
+    invalidateFile();
+    setReplayOpen(false);
+  }
+
   async function readFile(event: ChangeEvent<HTMLInputElement>) {
+    const operation = ++fileSequence.current;
     const file = event.target.files?.[0];
+    event.target.value = "";
+    setReadingFile(false);
     if (!file) return;
     setReplayError("");
     if (file.size > 65536) {
       setReplayError(t.fileTooLarge);
-      event.target.value = "";
       return;
     }
     setReadingFile(true);
     try {
-      setReplayText(await file.text());
+      const text = await file.text();
+      if (operation !== fileSequence.current) return;
+      setReplayText(text);
     } catch {
+      if (operation !== fileSequence.current) return;
       setReplayError(t.invalid);
     } finally {
-      setReadingFile(false);
-      event.target.value = "";
+      if (operation === fileSequence.current) setReadingFile(false);
     }
   }
 
@@ -1101,8 +1118,8 @@ export default function App() {
       <dialog
         className="replay-dialog"
         ref={dialog}
-        onClose={() => setReplayOpen(false)}
-        onCancel={() => setReplayOpen(false)}
+        onClose={closeReplay}
+        onCancel={closeReplay}
         aria-labelledby="replay-title"
         data-testid="replay-dialog"
       >
@@ -1111,7 +1128,7 @@ export default function App() {
           <button
             type="button"
             className="icon-button"
-            onClick={() => setReplayOpen(false)}
+            onClick={closeReplay}
             aria-label={t.close}
           >
             <Icon name="close" />
@@ -1127,6 +1144,7 @@ export default function App() {
           spellCheck={false}
           value={replayText}
           onChange={(event) => {
+            invalidateFile();
             setReplayText(event.target.value);
             setReplayError("");
           }}

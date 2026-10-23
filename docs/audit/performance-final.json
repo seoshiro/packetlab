@@ -1,0 +1,197 @@
+{
+  "environment": {
+    "node": "v24.18.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "workloads": [
+    {
+      "name": "packetlab-naive",
+      "repeats": 5,
+      "milliseconds": [
+        3.076,
+        1.018,
+        0.467,
+        0.329,
+        0.328
+      ],
+      "outcome": {
+        "status": "complete",
+        "now": 1504,
+        "metrics": {
+          "sent": 16,
+          "delivered": 11,
+          "applied": 12,
+          "duplicates": 1,
+          "dropped": 5,
+          "retries": 0,
+          "acknowledged": 0,
+          "failed": 5,
+          "meanLatency": 237.63636363636363,
+          "throughput": 7.3138297872340425
+        },
+        "pending": 0
+      }
+    },
+    {
+      "name": "packetlab-storm",
+      "repeats": 5,
+      "milliseconds": [
+        2.356,
+        1.218,
+        1.654,
+        0.874,
+        0.724
+      ],
+      "outcome": {
+        "status": "complete",
+        "now": 1307,
+        "metrics": {
+          "sent": 113,
+          "delivered": 7,
+          "applied": 19,
+          "duplicates": 12,
+          "dropped": 96,
+          "retries": 97,
+          "acknowledged": 7,
+          "failed": 9,
+          "meanLatency": 543.5714285714286,
+          "throughput": 5.355776587605202
+        },
+        "pending": 0
+      }
+    },
+    {
+      "name": "packetlab-backoff",
+      "repeats": 5,
+      "milliseconds": [
+        0.841,
+        0.929,
+        0.679,
+        0.462,
+        0.521
+      ],
+      "outcome": {
+        "status": "complete",
+        "now": 3207,
+        "metrics": {
+          "sent": 69,
+          "delivered": 16,
+          "applied": 23,
+          "duplicates": 7,
+          "dropped": 49,
+          "retries": 53,
+          "acknowledged": 16,
+          "failed": 0,
+          "meanLatency": 826.9375,
+          "throughput": 4.989086373557842
+        },
+        "pending": 0
+      }
+    },
+    {
+      "name": "packetlab-dedup",
+      "repeats": 5,
+      "milliseconds": [
+        1.018,
+        0.655,
+        0.515,
+        0.653,
+        0.504
+      ],
+      "outcome": {
+        "status": "complete",
+        "now": 1692,
+        "metrics": {
+          "sent": 34,
+          "delivered": 12,
+          "applied": 12,
+          "duplicates": 38,
+          "dropped": 11,
+          "retries": 22,
+          "acknowledged": 12,
+          "failed": 0,
+          "meanLatency": 187.41666666666666,
+          "throughput": 7.092198581560283
+        },
+        "pending": 0
+      }
+    },
+    {
+      "name": "packetlab-maximum-duplication-retries-40-messages",
+      "repeats": 5,
+      "milliseconds": [
+        12.905,
+        13.696,
+        12.964,
+        12.362,
+        12.77
+      ],
+      "outcome": {
+        "status": "complete",
+        "now": 6443,
+        "metrics": {
+          "sent": 480,
+          "delivered": 40,
+          "applied": 40,
+          "duplicates": 132,
+          "dropped": 394,
+          "retries": 440,
+          "acknowledged": 40,
+          "failed": 0,
+          "meanLatency": 1778.15,
+          "throughput": 6.2082880645661955
+        },
+        "pending": 0,
+        "trace": 512,
+        "series": 213
+      }
+    },
+    {
+      "name": "tracekit-100-events-record-replay-expected-export-import",
+      "repeats": 5,
+      "milliseconds": [
+        6.192,
+        3.739,
+        4.196,
+        2.823,
+        2.499
+      ],
+      "outcome": {
+        "entries": 100,
+        "bytes": 41143,
+        "differences": 0
+      }
+    },
+    {
+      "name": "juryflow-demo-solve",
+      "repeats": 5,
+      "milliseconds": [
+        9.677,
+        2.588,
+        2.546,
+        3.197,
+        1.693
+      ],
+      "outcome": {
+        "status": "feasible",
+        "nodes": 3670,
+        "assignments": 12
+      }
+    },
+    {
+      "name": "juryflow-maximum-domain-construction-bounded",
+      "repeats": 3,
+      "milliseconds": [
+        225.316,
+        257.36,
+        206.323
+      ],
+      "outcome": {
+        "status": "unknown",
+        "nodes": 120000,
+        "assignments": 0
+      }
+    }
+  ]
+}

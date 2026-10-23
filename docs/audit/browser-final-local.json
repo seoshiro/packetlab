@@ -1,0 +1,198 @@
+[
+  {
+    "repo": "packetlab",
+    "name": "initial-a11y",
+    "status": "PASS",
+    "evidence": {
+      "violations": 0
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "first-keyboard-focus",
+    "status": "PASS",
+    "evidence": {
+      "tag": "A",
+      "text": "К эксперименту",
+      "outline": "solid",
+      "shadow": "none",
+      "r": {
+        "x": 20,
+        "y": 12,
+        "width": 156.75,
+        "height": 46,
+        "top": 12,
+        "right": 176.75,
+        "bottom": 58,
+        "left": 20
+      }
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "step-replay-roundtrip",
+    "status": "PASS",
+    "evidence": true
+  },
+  {
+    "repo": "packetlab",
+    "name": "dialog-focus",
+    "status": "PASS",
+    "evidence": true
+  },
+  {
+    "repo": "packetlab",
+    "name": "dialog-a11y",
+    "status": "PASS",
+    "evidence": {
+      "violations": 0
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "repeated-run-reset",
+    "status": "PASS",
+    "evidence": true
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-en-320",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-en-390",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-en-768",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-en-1440",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 1440,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "a11y-en-320",
+    "status": "PASS",
+    "evidence": {
+      "violations": 0
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "dialog-en-320",
+    "status": "PASS",
+    "evidence": {
+      "violations": 0
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-ru-320",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-ru-390",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-ru-768",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "layout-ru-1440",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 1440,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "offending": []
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "a11y-ru-320",
+    "status": "PASS",
+    "evidence": {
+      "violations": 0
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "dialog-ru-320",
+    "status": "PASS",
+    "evidence": {
+      "violations": 0
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "reflow-720-css-pixels",
+    "status": "PASS",
+    "evidence": {
+      "innerWidth": 720,
+      "scrollWidth": 720,
+      "clientWidth": 720,
+      "offending": [],
+      "method": "720 CSS px viewport reflow; native browser zoom not asserted"
+    }
+  },
+  {
+    "repo": "packetlab",
+    "name": "runtime-network",
+    "status": "PASS",
+    "evidence": {
+      "errors": [],
+      "network": []
+    }
+  }
+]

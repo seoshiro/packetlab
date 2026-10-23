@@ -71,8 +71,13 @@ export function validateConfig(input: unknown): Config {
   ) {
     throw new Error("Configuration fields do not match schema version 1.");
   }
+  const validated: [string, unknown][] = [];
   for (const key of keys as (keyof Config)[]) {
-    const value = candidate[key];
+    const descriptor = Object.getOwnPropertyDescriptor(candidate, key);
+    if (!descriptor || !("value" in descriptor) || !descriptor.enumerable) {
+      throw new Error("Configuration must contain enumerable data fields only.");
+    }
+    const value: unknown = descriptor.value;
     if (booleanKeys.includes(key)) {
       if (typeof value !== "boolean")
         throw new Error(`${key} must be a boolean.`);
@@ -90,10 +95,9 @@ export function validateConfig(input: unknown): Config {
         throw new Error(`${key} must be from 0 to 1.`);
       }
     }
+    validated.push([key, value]);
   }
-  return Object.fromEntries(
-    keys.map((key) => [key, candidate[key]]),
-  ) as unknown as Config;
+  return Object.fromEntries(validated) as unknown as Config;
 }
 
 /** Replay = initial configuration, not a saved animation cursor or untrusted code. */

@@ -1,0 +1,8 @@
+{
+  "seed": 99222801,
+  "result": {
+    "cases": 180,
+    "eventSteps": 9410,
+    "checks": "event ordering, directional queue caps, immutable public accounting, DATA/ACK conservation including duplicate flights, retry budget, termination, seed/replay/frame cadence equivalence"
+  }
+}

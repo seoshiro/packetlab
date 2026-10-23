@@ -1,5 +1,7 @@
 # PACKETLAB
 
+[Independent deep audit and verified repair (23 October 2026)](docs/audit/QA-2026-10-23.md)
+
 **Reliable delivery, explained.** An interactive laboratory for sending messages through an unreliable simulated channel.
 
 [Open the lab →](https://seoshiro.github.io/packetlab/) · [Verification workflow](https://github.com/seoshiro/packetlab/actions) · [Independent audit](docs/AUDIT.md)
