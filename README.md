@@ -1,5 +1,7 @@
 # PACKETLAB
 
+[Official 21st / Vercel / Emil follow-up and modal repair](docs/audit/FOLLOWUP-2026-10-24.md)
+
 [Design, accessibility and functional audit (24 October 2026)](docs/audit/UIUX-2026-10-24.md)
 
 [Independent deep audit and verified repair (23 October 2026)](docs/audit/QA-2026-10-23.md)

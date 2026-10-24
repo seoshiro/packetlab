@@ -237,3 +237,10 @@
     min-height: 40px;
   }
 }
+/* Native modal focus isolation also needs document scroll isolation. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+dialog[open] {
+  overscroll-behavior: contain;
+}

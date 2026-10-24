@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-24",
+  "repo": "packetlab",
+  "localE2E": {
+    "repo": "packetlab",
+    "exitCode": 0,
+    "stats": {
+      "startTime": "2026-10-24T09:22:52.881Z",
+      "duration": 25849.238999999998,
+      "expected": 21,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "sourceReview": {
+    "errors": 1,
+    "warnings": 0,
+    "suggestions": 265
+  },
+  "sourceUnchangedByCLI": true,
+  "cssByteDelta": 80,
+  "dependencyChange": false,
+  "screenshots": [
+    {
+      "file": "before-modal.png",
+      "sha256": "8934f85ad7614c3e8f330902d4993729350a796b2ee16fcea88c23a2eaa81ca4",
+      "bytes": 181019
+    },
+    {
+      "file": "after-modal.png",
+      "sha256": "3c39ac8b32ee006fe871089f2c5c1116fa42f7e5e114dff2ec8aba0950b0f3d8",
+      "bytes": 176325
+    }
+  ],
+  "limits": [
+    "Chromium only",
+    "Emulated touch opening and real wheel input; no physical-device claim"
+  ],
+  "release": "Exact SHA, CI and live checks are supplied in final delivery; existing live workflow gates production."
+}

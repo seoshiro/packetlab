@@ -1,0 +1,83 @@
+{
+  "completedAt": "2026-10-24T09:27:40.971Z",
+  "package": {
+    "name": "@21st-dev/cli",
+    "version": "1.18.0",
+    "integrity": "sha512-rV8X5asUb0Qyvyc2ZD+itxL/u6VgyovuPIVc7wwBrvSNfdsWXxNGcYqfhrA4PMJ+/CqWVhm1jEl5/w36N91JWw=="
+  },
+  "mode": "read-only local; no login/upload/fix; blank token prevents stored-auth read and telemetry",
+  "reviews": [
+    {
+      "repo": "packetlab",
+      "version": "1.18.0",
+      "command": "21st review src --json --token \"\"",
+      "exitCode": 1,
+      "sourceUnchanged": true,
+      "filesReviewed": 14,
+      "summary": {
+        "errors": 1,
+        "warnings": 0,
+        "suggestions": 265
+      },
+      "findings": 266,
+      "sourceHashes": [
+        {
+          "path": "App.tsx",
+          "sha256": "da00107b70ea5f10c6410d6bf4fa933080e30d08e97d73c9545bb48172fd2d10"
+        },
+        {
+          "path": "chartData.ts",
+          "sha256": "b7007cddba1c2bb7a6e7925ad1c68547f21298a28266d4454dc790464d8c5bbd"
+        },
+        {
+          "path": "components/Chart.tsx",
+          "sha256": "5100adf22ab55300dbeb8118c8bbb6c92a7a42dece4e3eb6fbeac316b27577c9"
+        },
+        {
+          "path": "components/Network.tsx",
+          "sha256": "aa38b6cce124db3c472e546eef29c15f5c26ef216435e519ab02ba1031f6026d"
+        },
+        {
+          "path": "core/config.ts",
+          "sha256": "1fe232622c55f4329dc2eb71be65358970402fa8020783aa125f50fed66dfe32"
+        },
+        {
+          "path": "core/index.ts",
+          "sha256": "c71e3584ccc641f8731bc122cd87f951e0ef5b04e69b6f866df493a6fd1ae441"
+        },
+        {
+          "path": "core/scenarios.ts",
+          "sha256": "157fec95192febe44c405114d5909f6b07b6a4b8c2402708b002e961fd6a5f7a"
+        },
+        {
+          "path": "core/simulation.ts",
+          "sha256": "bb32455c4ce1444b7b9bb497a33c87b9de23aa9afe00141a69fe0fa79971ed93"
+        },
+        {
+          "path": "core/types.ts",
+          "sha256": "8c19239e89b799c0720a992000386d05514e3a3940e9842b5a182257c5b288a7"
+        },
+        {
+          "path": "i18n.ts",
+          "sha256": "25c72c107a7c1e62c14000b92ec42376e9cee9582655ede9c05f12da2de03ac2"
+        },
+        {
+          "path": "main.tsx",
+          "sha256": "9af0be27f158263dfa6524f838f0a0d4eb788f41950cf2648768e42c53511c7f"
+        },
+        {
+          "path": "refinements.css",
+          "sha256": "921e1d0a6a9e46a2518d6c1d24949b330ad324c1c556866d377ca9d3576305ae"
+        },
+        {
+          "path": "styles.css",
+          "sha256": "c0fe47b3f40bc0e0f004b7aa83666fb70e7c8eb8707ed860b4098716653ed1ff"
+        },
+        {
+          "path": "vite-env.d.ts",
+          "sha256": "6f5a6b2fe011157aa5f7aa1e480ab7e7e1e9a50f15138557fceabe2b236d267a"
+        }
+      ]
+    }
+  ]
+}
