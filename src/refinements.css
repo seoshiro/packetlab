@@ -1,0 +1,239 @@
+/* Labels are HTML at CSS-pixel sizes; only the vector plot scales. */
+.chart-plot {
+  height: 180px;
+  position: relative;
+  padding: 10px 12px 28px 48px;
+  margin-top: 12px;
+  min-width: 0;
+}
+.chart-plot .chart {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.chart-y-axis {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 21px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  font: 11px/16px var(--mono);
+  color: #5a6951;
+}
+.chart-x-axis {
+  position: absolute;
+  left: 48px;
+  right: 12px;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  font: 11px/18px var(--mono);
+  color: #5a6951;
+}
+.chart-plot .chart-empty {
+  position: absolute;
+  top: 45%;
+  left: 48px;
+  right: 12px;
+  font:
+    13px/1.5 Arial,
+    sans-serif;
+  text-align: center;
+  color: #586a50;
+}
+.chart-line,
+.chart-grid {
+  vector-effect: non-scaling-stroke;
+}
+.chart-heading h3 {
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: none;
+}
+.chart-heading > span {
+  font-size: 15px;
+}
+.chart-heading small {
+  font-size: 11px;
+}
+.sample-details summary {
+  min-height: 44px;
+  font-size: 12px;
+}
+.sample-details table {
+  font-size: 12px;
+}
+.range-value {
+  font: 16px var(--mono);
+  color: var(--ink);
+}
+.range-value small {
+  font-size: 11px;
+  margin-left: 4px;
+}
+@container channel (max-width: 650px) {
+  .network-svg {
+    display: none;
+  }
+  .mobile-network {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 16px;
+    min-height: 175px;
+  }
+  .mobile-node {
+    width: 88px;
+    min-height: 86px;
+    padding: 12px 8px;
+    background: #2a362e;
+    border: 1px solid #5c6c53;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  .mobile-node > strong {
+    font-size: 12px;
+    font-weight: 400;
+    color: #d8e4cf;
+    display: block;
+    overflow-wrap: anywhere;
+  }
+  .mobile-node > b {
+    font: 24px var(--mono);
+    margin-top: 9px;
+    display: block;
+    color: #f0f4e9;
+  }
+  .mobile-node > b > small {
+    display: block;
+    margin: 4px 0 0;
+    font:
+      11px Arial,
+      sans-serif;
+    color: #b7c8ac;
+  }
+  .mobile-link {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .mobile-link > span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #f18d6e;
+    font: 11px var(--mono);
+  }
+  .mobile-link > span::before {
+    content: "";
+    height: 1px;
+    min-width: 3px;
+    flex: 1;
+    background: #926046;
+  }
+  .mobile-link > span::after {
+    content: "→";
+    font-size: 14px;
+  }
+  .mobile-link > span.ack-lane {
+    flex-direction: row-reverse;
+    color: #b7d3ac;
+  }
+  .mobile-link > span.ack-lane::after {
+    content: "←";
+  }
+  .mobile-link > small {
+    font: 11px/1.5 var(--mono);
+    text-align: center;
+    color: #b7c8ac;
+    overflow-wrap: anywhere;
+  }
+  .network-summary,
+  .network-summary .direction-summary {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  .network-summary b {
+    font-size: 12px;
+  }
+  .network-legend {
+    font-size: 11px;
+  }
+}
+@media (max-width: 760px) {
+  .chart-heading h3 {
+    font-size: 13px;
+  }
+  .chart-heading > span {
+    font-size: 14px;
+  }
+  .chart-heading small {
+    font-size: 11px;
+  }
+  .metric p,
+  .metric > span {
+    font-size: 11px;
+  }
+  .scenario-card p,
+  .hero-aside p,
+  .hero-aside > span {
+    font-size: 12px;
+  }
+  .section-label h2,
+  .section-label p {
+    font-size: 11px;
+  }
+  .run-button,
+  .instrument-button,
+  .replay-trigger {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .speed-control select {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .status-light,
+  .network-summary {
+    font-size: 11px;
+  }
+  .simulation-clock > span {
+    font-size: 10px;
+  }
+  .setting-label,
+  .range-endpoints,
+  .toggle-setting small,
+  .number-setting small {
+    font-size: 11px;
+  }
+  .toggle-setting,
+  .number-setting input {
+    min-height: 44px;
+  }
+  .number-setting input {
+    font-size: 16px;
+  }
+  .keyboard-help,
+  .event-label,
+  .event-time,
+  .queue-row strong,
+  .queue-row time,
+  .reason-label {
+    font-size: 11px;
+  }
+  .reason-panel p {
+    font-size: 12px;
+  }
+  .technical-detail summary {
+    font-size: 12px;
+    min-height: 40px;
+  }
+}

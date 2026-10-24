@@ -1,5 +1,7 @@
 # PACKETLAB
 
+[Design, accessibility and functional audit (24 October 2026)](docs/audit/UIUX-2026-10-24.md)
+
 [Independent deep audit and verified repair (23 October 2026)](docs/audit/QA-2026-10-23.md)
 
 **Reliable delivery, explained.** An interactive laboratory for sending messages through an unreliable simulated channel.

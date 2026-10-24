@@ -1,22 +1,25 @@
 import type { Sample } from "../core";
 import { copy, type Language } from "../i18n";
+import { chartSeries } from "../chartData";
 
 type Props = {
   samples: Sample[];
+  current: Sample;
   field: "latency" | "throughput";
   language: Language;
 };
 
-export function Chart({ samples, field, language }: Props) {
+export function Chart({ samples, current, field, language }: Props) {
   const t = copy[language];
-  const points = samples.filter((sample) => sample[field] !== null);
-  const maxTime = Math.max(1000, ...samples.map((sample) => sample.time));
+  const displayed = chartSeries(samples, current);
+  const points = displayed.filter((sample) => sample[field] !== null);
+  const maxTime = Math.max(1000, ...displayed.map((sample) => sample.time));
   const maxValue =
     Math.max(1, ...points.map((sample) => sample[field] ?? 0)) * 1.15;
   const path = points
     .map(
       (sample) =>
-        `${48 + (sample.time / maxTime) * 504},${132 - ((sample[field] ?? 0) / maxValue) * 104}`,
+        `${(sample.time / maxTime) * 504},${104 - ((sample[field] ?? 0) / maxValue) * 104}`,
     )
     .join(" ");
   const title = field === "latency" ? t.latencyChart : t.throughputChart;
@@ -32,49 +35,60 @@ export function Chart({ samples, field, language }: Props) {
           {latest == null ? "—" : format(latest)} <small>{unit}</small>
         </span>
       </div>
-      <svg
-        className="chart"
-        viewBox="0 0 580 166"
+      <div
+        className="chart-plot"
         role="img"
         aria-label={`${title}: ${latest == null ? t.noData : `${format(latest)} ${unit}`}`}
       >
-        {[28, 80, 132].map((y, index) => (
-          <g key={y}>
-            <line x1="48" x2="552" y1={y} y2={y} className="chart-grid" />
-            <text x="37" y={y + 4} textAnchor="end">
-              {format(maxValue * (1 - index / 2))}
-            </text>
-          </g>
-        ))}
-        <text x="48" y="155">
-          0
-        </text>
-        <text x="552" y="155" textAnchor="end">
-          {(maxTime / 1000).toFixed(1)} s
-        </text>
-        {points.length > 0 && (
-          <>
-            <polyline
-              points={path}
-              fill="none"
-              className={`chart-line ${field}`}
+        <div className="chart-y-axis" aria-hidden="true">
+          {[1, 0.5, 0].map((ratio) => (
+            <span key={ratio}>{format(maxValue * ratio)}</span>
+          ))}
+        </div>
+        <svg
+          className="chart"
+          viewBox="0 0 504 104"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          {[0, 52, 104].map((y) => (
+            <line
+              key={y}
+              x1="0"
+              x2="504"
+              y1={y}
+              y2={y}
+              className="chart-grid"
             />
-            {points.length === 1 && (
-              <circle
-                cx={48 + (points[0].time / maxTime) * 504}
-                cy={132 - ((points[0][field] ?? 0) / maxValue) * 104}
-                r="3"
-                className={`chart-dot ${field}`}
+          ))}
+          {points.length > 0 && (
+            <>
+              <polyline
+                points={path}
+                fill="none"
+                className={`chart-line ${field}`}
               />
-            )}
-          </>
-        )}
+              {points.length === 1 && (
+                <circle
+                  cx={(points[0].time / maxTime) * 504}
+                  cy={104 - ((points[0][field] ?? 0) / maxValue) * 104}
+                  r="3"
+                  className={`chart-dot ${field}`}
+                />
+              )}
+            </>
+          )}
+        </svg>
         {points.length === 0 && (
-          <text x="300" y="83" textAnchor="middle" className="chart-empty">
+          <span className="chart-empty" aria-hidden="true">
             {t.chartEmpty}
-          </text>
+          </span>
         )}
-      </svg>
+        <div className="chart-x-axis" aria-hidden="true">
+          <span>0</span>
+          <span>{(maxTime / 1000).toFixed(1)} s</span>
+        </div>
+      </div>
       <details className="sample-details">
         <summary>
           {t.samples} <span>{points.length}</span>

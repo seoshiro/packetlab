@@ -1,0 +1,315 @@
+{
+  "date": "2026-10-24",
+  "repo": "packetlab",
+  "baseline": "0b5da3a3a50bf057dc6fb6ea654b7707b84e9ff1",
+  "unitTests": 57,
+  "finalLocalE2E": {
+    "startTime": "2026-10-24T08:28:05.891Z",
+    "duration": 24396.898,
+    "expected": 19,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "visualChecks": [
+    {
+      "repo": "packetlab",
+      "name": "fresh-axes/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "fresh-axes/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "fresh-axes/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "fresh-axes/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "complete/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "complete/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "complete/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "complete/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "advanced/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "advanced/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "advanced/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "advanced/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "axes-HTML-11px-all-viewports",
+      "pass": true,
+      "details": {
+        "minimumFont": 11
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "landscape-uses-compact-network",
+      "pass": true,
+      "details": {
+        "svgDisplay": "none",
+        "mobileDisplay": "flex"
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "throughput-current-1000ms/desktop/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "throughput-current-1000ms/mobile320/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "throughput-current-1000ms/mobile390/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "throughput-current-1000ms/landscape/no-page-overflow",
+      "pass": true,
+      "details": {
+        "width": 844,
+        "scrollWidth": 844
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "throughput-current-values-agree",
+      "pass": true,
+      "details": {
+        "time": "1.00s",
+        "metric": "1.0msg/s",
+        "chart": "1.0 msg/s",
+        "replay": {
+          "schemaVersion": 1,
+          "config": {
+            "seed": 31415,
+            "messageCount": 2,
+            "sendIntervalMs": 2000,
+            "delayMs": 10,
+            "jitterMs": 0,
+            "loss": 0,
+            "duplicate": 0,
+            "ack": false,
+            "retry": false,
+            "dedup": true,
+            "backoff": true,
+            "retryJitter": true,
+            "timeoutMs": 180,
+            "maxAttempts": 7,
+            "queueCapacity": 8,
+            "serviceMs": 10
+          }
+        }
+      }
+    },
+    {
+      "repo": "packetlab",
+      "name": "no-browser-pageerrors",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "sharedInteraction": {
+    "baseline": {
+      "passed": 44,
+      "failed": 4,
+      "errors": 0
+    },
+    "firstCandidate": {
+      "passed": 47,
+      "failed": 1,
+      "errors": 0
+    },
+    "finalFocusedCases": 17,
+    "axeScans": 7,
+    "axeViolations": 0
+  },
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 320,
+      "height": 844
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 844,
+      "height": 390
+    }
+  ],
+  "browser": "Chromium 156.0.8078.4, installed Playwright on Windows",
+  "limits": [
+    "Chromium only",
+    "No physical-device, native browser zoom or human screen-reader speech verification"
+  ],
+  "screenshots": [
+    {
+      "path": "before-chart-320.png",
+      "bytes": 5715,
+      "sha256": "fd4e8a066b3b053cb504894f886b2c816b8543810270bfb71e28a3e770acbd56",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-chart-320.png",
+      "bytes": 5967,
+      "sha256": "da271b1c45bd19b933c96af2ba219ef3c9b168f30bc32ee3135beb2ddd463a03",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "before-chart-390.png",
+      "bytes": 5485,
+      "sha256": "38e122349879e5fe83b1cebc7f7da36bb281e895f5fbb0e19b7e0fe8f1ed6b45",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-chart-390.png",
+      "bytes": 6107,
+      "sha256": "49a5a16a5eeb5e183d952dc815e40c5d96cb3b6ff341b451bc4ad73bf18f052f",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "before-throughput.png",
+      "bytes": 196446,
+      "sha256": "5c38c8387f33b4034d674580cb60d3ee45fdaade89a3c3dfb36ce9bed6b53cb5",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-throughput.png",
+      "bytes": 216536,
+      "sha256": "9036be21fe9020aba5b5e38c35bf3deaedfea8a22b9b2026942ccc5c4bdf8b45",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "before-range-accessibility.txt",
+      "bytes": 360,
+      "sha256": "ec780eeea2830aed437f967235295e238f7de4853795fbeb35bbfff64c161e06",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "before-status.png",
+      "bytes": 39057,
+      "sha256": "9618e85513ff7e2b7ce15a49fa69b378edafc404a57d4213451df1f7c0dea852",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "before-network-landscape.png",
+      "bytes": 16044,
+      "sha256": "5be768fce656f96a8262a26418fef6f2369c38a71ec99c3489aa364c80cc38a0",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    },
+    {
+      "path": "after-network-landscape.png",
+      "bytes": 10698,
+      "sha256": "6a807771bb782a39d53f61dca85392b3c93a71caae5456c97b1007f8b0f9b4f8",
+      "method": "Real isolated Playwright Chromium capture on Windows; no generated image"
+    }
+  ],
+  "release": "CI live job and final delivery identify exact source SHA after deploy; candidate screenshots intentionally retain baseline footer until committed build"
+}

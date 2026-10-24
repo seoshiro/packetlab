@@ -510,6 +510,8 @@ button:disabled {
 }
 .network {
   position: relative;
+  container-type: inline-size;
+  container-name: channel;
 }
 .network-legend {
   display: flex;

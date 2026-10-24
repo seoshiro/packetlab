@@ -1,0 +1,156 @@
+[
+  {
+    "id": "PL-INT-RANGES",
+    "labels": [
+      {
+        "testid": "config-loss",
+        "labels": [
+          "Packet loss30%0%100%"
+        ],
+        "parentTag": "LABEL",
+        "outerHTML": "<label class=\"range-setting\" for=\"range-loss\"><span><span id=\"range-label-loss\">Packet loss</span><span class=\"range-value\">30<small>%</small></span></span><input id=\"range-loss\" aria-labelledby=\"range-label-loss\" aria-valuetext=\"30 %\" min=\"0\" max=\"100\" step=\"1\" data-testid=\"config-loss\" type=\"range\" value=\"30\"><span class=\"range-endpoints\"><small>0%</small><small>100%</small></span></label>"
+      },
+      {
+        "testid": "config-duplicate",
+        "labels": [
+          "Duplication12%0%100%"
+        ],
+        "parentTag": "LABEL",
+        "outerHTML": "<label class=\"range-setting\" for=\"range-duplicate\"><span><span id=\"range-label-duplicate\">Duplication</span><span class=\"range-value\">12<small>%</small></span></span><input id=\"range-duplicate\" aria-labelledby=\"range-label-duplicate\" aria-valuetext=\"12 %\" min=\"0\" max=\"100\" step=\"1\" data-testid=\"config-duplicate\" type=\"range\" value=\"12\"><span class=\"range-endpoints\"><small>0%</small><small>100%</small></span></label>"
+      },
+      {
+        "testid": "config-delayMs",
+        "labels": [
+          "Base delay220ms10ms2000ms"
+        ],
+        "parentTag": "LABEL",
+        "outerHTML": "<label class=\"range-setting\" for=\"range-delayMs\"><span><span id=\"range-label-delayMs\">Base delay</span><span class=\"range-value\">220<small>ms</small></span></span><input id=\"range-delayMs\" aria-labelledby=\"range-label-delayMs\" aria-valuetext=\"220 ms\" min=\"10\" max=\"2000\" step=\"10\" data-testid=\"config-delayMs\" type=\"range\" value=\"220\"><span class=\"range-endpoints\"><small>10ms</small><small>2000ms</small></span></label>"
+      },
+      {
+        "testid": "config-jitterMs",
+        "labels": [
+          "Delay variation90ms0ms1000ms"
+        ],
+        "parentTag": "LABEL",
+        "outerHTML": "<label class=\"range-setting\" for=\"range-jitterMs\"><span><span id=\"range-label-jitterMs\">Delay variation</span><span class=\"range-value\">90<small>ms</small></span></span><input id=\"range-jitterMs\" aria-labelledby=\"range-label-jitterMs\" aria-valuetext=\"90 ms\" min=\"0\" max=\"1000\" step=\"10\" data-testid=\"config-jitterMs\" type=\"range\" value=\"90\"><span class=\"range-endpoints\"><small>0ms</small><small>1000ms</small></span></label>"
+      }
+    ],
+    "accessibilityTree": "- text: Packet loss 30%\n- slider \"Packet loss\": \"30\"\n- text: 0% 100% Duplication 12%\n- slider \"Duplication\": \"12\"\n- text: 0% 100% Base delay 220ms\n- slider \"Base delay\": \"220\"\n- text: 10ms 2000ms Delay variation 90ms\n- slider \"Delay variation\": \"90\"\n- text: 0ms 1000ms"
+  },
+  {
+    "id": "PL-INT-COMPLETION",
+    "completion": {
+      "text": "Experiment complete",
+      "role": "status",
+      "liveAncestor": "<span data-testid=\"simulation-status\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\" data-status=\"complete\">Experiment complete</span>"
+    }
+  },
+  {
+    "id": "PL-INT-INSPECT",
+    "selection": {
+      "text": "120msRetry#09×2",
+      "reason": "Why it happensRetryThe sender has not received an ACK. It retries the same message ID, even though the receiver may have already applied it.Exact model recordNo ACK has arrived; sender retries the same message ID.",
+      "running": "true"
+    },
+    "later": {
+      "text": null,
+      "reason": "Why it happensRetryThe sender has not received an ACK. It retries the same message ID, even though the receiver may have already applied it.Exact model recordNo ACK has arrived; sender retries the same message ID.",
+      "running": "false"
+    }
+  },
+  {
+    "id": "NATIVE-MODAL-FOCUS",
+    "modalFocus": [
+      {
+        "tag": "TEXTAREA",
+        "text": "{\n  \"schemaVersion\": 1,\n  \"config\": {\n    \"seed\": 73,\n    \"messageCoun",
+        "inside": true
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Download JSON ↓",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Import and reset",
+        "inside": true
+      },
+      {
+        "tag": "BODY",
+        "text": "Skip to experimentPACKETLABDELIVERY LABORATORYGitHub ↗ — Source codeRU",
+        "inside": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Close",
+        "inside": true
+      },
+      {
+        "tag": "TEXTAREA",
+        "text": "{\n  \"schemaVersion\": 1,\n  \"config\": {\n    \"seed\": 73,\n    \"messageCoun",
+        "inside": true
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Download JSON ↓",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Import and reset",
+        "inside": true
+      },
+      {
+        "tag": "BODY",
+        "text": "Skip to experimentPACKETLABDELIVERY LABORATORYGitHub ↗ — Source codeRU",
+        "inside": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Close",
+        "inside": true
+      },
+      {
+        "tag": "TEXTAREA",
+        "text": "{\n  \"schemaVersion\": 1,\n  \"config\": {\n    \"seed\": 73,\n    \"messageCoun",
+        "inside": true
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Download JSON ↓",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Import and reset",
+        "inside": true
+      },
+      {
+        "tag": "BODY",
+        "text": "Skip to experimentPACKETLABDELIVERY LABORATORYGitHub ↗ — Source codeRU",
+        "inside": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Close",
+        "inside": true
+      }
+    ]
+  }
+]

@@ -12,6 +12,7 @@ import { Chart } from "./components/Chart";
 import { Network } from "./components/Network";
 import { copy, eventLabel, type Language } from "./i18n";
 import "./styles.css";
+import "./refinements.css";
 
 declare const __BUILD_SHA__: string;
 
@@ -656,6 +657,9 @@ export default function App() {
                     <i />
                     <span
                       data-testid="simulation-status"
+                      role="status"
+                      aria-live="polite"
+                      aria-atomic="true"
                       data-status={snapshot.status}
                     >
                       {statusText}
@@ -833,15 +837,24 @@ export default function App() {
                     ? Math.round(config[range.key] * 100)
                     : config[range.key];
                   return (
-                    <label className="range-setting" key={range.key}>
+                    <label
+                      className="range-setting"
+                      key={range.key}
+                      htmlFor={`range-${range.key}`}
+                    >
                       <span>
-                        {range.label}
-                        <output>
+                        <span id={`range-label-${range.key}`}>
+                          {range.label}
+                        </span>
+                        <span className="range-value">
                           {value}
                           <small>{range.unit}</small>
-                        </output>
+                        </span>
                       </span>
                       <input
+                        id={`range-${range.key}`}
+                        aria-labelledby={`range-label-${range.key}`}
+                        aria-valuetext={`${value} ${range.unit}`}
                         type="range"
                         min={range.min}
                         max={range.max}
@@ -966,11 +979,25 @@ export default function App() {
           <div className="charts-grid">
             <Chart
               samples={snapshot.series}
+              current={{
+                time: snapshot.now,
+                delivered: snapshot.metrics.delivered,
+                applied: snapshot.metrics.applied,
+                latency: snapshot.metrics.meanLatency,
+                throughput: snapshot.metrics.throughput,
+              }}
               field="latency"
               language={language}
             />
             <Chart
               samples={snapshot.series}
+              current={{
+                time: snapshot.now,
+                delivered: snapshot.metrics.delivered,
+                applied: snapshot.metrics.applied,
+                latency: snapshot.metrics.meanLatency,
+                throughput: snapshot.metrics.throughput,
+              }}
               field="throughput"
               language={language}
             />

@@ -1,0 +1,13 @@
+- text: Packet loss
+- status "Packet loss 30 0% 100%": 30%
+- slider: "30"
+- text: 0% 100% Duplication
+- status "Duplication 12 0% 100%": 12%
+- slider: "12"
+- text: 0% 100% Base delay
+- status "Base delay 220 10ms 2000ms": 220ms
+- slider: "220"
+- text: 10ms 2000ms Delay variation
+- status "Delay variation 90 0ms 1000ms": 90ms
+- slider: "90"
+- text: 0ms 1000ms
