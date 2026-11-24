@@ -1,20 +1,14 @@
 # PACKETLAB
 
-[Official 21st / Vercel / Emil follow-up and modal repair](docs/audit/FOLLOWUP-2026-10-24.md)
-
-[Design, accessibility and functional audit (24 October 2026)](docs/audit/UIUX-2026-10-24.md)
-
-[Independent deep audit and verified repair (23 October 2026)](docs/audit/QA-2026-10-23.md)
-
 **Reliable delivery, explained.** An interactive laboratory for sending messages through an unreliable simulated channel.
 
-[Open the lab →](https://seoshiro.github.io/packetlab/) · [Verification workflow](https://github.com/seoshiro/packetlab/actions) · [Independent audit](docs/AUDIT.md)
+[Open the lab →](https://seoshiro.github.io/packetlab/) · [Verification workflow](https://github.com/seoshiro/packetlab/actions)
 
 PACKETLAB is a **discrete-event simulation**. It is not a packet analyzer, a real network benchmark, or an RFC-compatible implementation of TCP. Every number in the interface is synthetic and derived from the model below. No sockets are opened by the simulation.
 
 ![Desktop channel instrument after the dedup experiment](docs/screenshots/desktop.png)
 
-Actual Playwright screenshots from the user's Windows computer: [desktop instrument](docs/screenshots/desktop.png) · [mobile instrument](docs/screenshots/mobile.png).
+Screenshots of the running app: [desktop instrument](docs/screenshots/desktop.png) · [mobile instrument](docs/screenshots/mobile.png).
 
 ## Try it in two minutes
 
@@ -84,6 +78,32 @@ Charts show event-time samples of cumulative mean latency and cumulative useful 
 
 ## Architecture
 
+The simulation core is a framework-free TypeScript module; React only renders snapshots of it.
+
+```mermaid
+flowchart LR
+  Config["config.ts<br/>strict schema v1"] --> Sim
+  Scen["scenarios.ts<br/>4 presets"] --> Config
+  subgraph Core ["src/core — no React, no DOM"]
+    Sim["Simulation<br/>discrete-event loop"] --> Queue["event queue<br/>ordered by (t, id)"]
+    Sim --> PRNG["Mulberry32<br/>seeded RNG"]
+    Sim --> Links["DATA / ACK links<br/>bounded FIFOs"]
+  end
+  Sim -->|immutable snapshot| App["App.tsx<br/>playback + controls"]
+  App --> Viz["SVG instrument<br/>charts, trace"]
+  App <-->|Replay JSON| File[(export / import)]
+```
+
+### Key decisions
+
+**ADR-1. Discrete-event simulation instead of real sockets or timers.** The goal is to explain ACK, retry, backoff, jitter and dedup, not to benchmark a network. Simulated integer time with a `(t, id)`-ordered queue makes every run exact and testable, including ties such as a timeout and an ACK at the same millisecond. Trade-off: no TCP congestion control, flow control or real latency; the README and UI say so.
+
+**ADR-2. One seeded PRNG consumed only by model events.** Rendering, pause and playback speed never draw random numbers, so a configuration plus a seed always reproduces the same run, and a Replay JSON file is enough to share an experiment. Trade-off: changing retry or jitter settings changes the order of random draws, so the same seed does not give the same losses across different configurations.
+
+**ADR-3. Pure core, thin UI.** `src/core` imports neither React nor DOM APIs and returns copied snapshots, so the model is unit-tested in isolation (hundreds of assertions in `tests/core.test.ts`) and the UI cannot mutate it. Trade-off: the UI re-renders from snapshots instead of sharing mutable state, which costs some copying but stays within hard event and trace limits.
+
+### Layout
+
 ```text
 src/core/             Pure TypeScript state machine, scheduler, PRNG, validation
   simulation.ts       Model transitions and derived metrics
@@ -92,7 +112,7 @@ src/core/             Pure TypeScript state machine, scheduler, PRNG, validation
 src/App.tsx           Playback, controls, scenario selection and replay workflow
 src/components/       SVG instrument and accessible charts
 src/i18n.ts           RU/EN interface copy
-tests/                Core regressions and independent browser/model audit
+tests/                Core regressions and browser end-to-end checks
 .github/workflows/    Unit → typecheck → lint → build → E2E → Pages
 ```
 
@@ -113,7 +133,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Browser tests use **one worker**. Local browser verification and screenshots are performed on the developer/user's Windows computer in a separate Playwright Chromium, without interacting with other browser sessions. CI runs on GitHub-hosted Ubuntu. The static production build is in `dist/`; Vite's relative base supports GitHub project Pages.
+Browser tests use **one worker** and run in Playwright Chromium. CI runs on GitHub-hosted Ubuntu. The static production build is in `dist/`; Vite's relative base supports GitHub project Pages.
 
 Each build embeds its full Git commit SHA (`GITHUB_SHA` in CI, local `git rev-parse HEAD` otherwise). Check the footer to match the deployed app against the tested commit. Publishing runs only after every verification stage succeeds; live verification is performed separately after deployment.
 
